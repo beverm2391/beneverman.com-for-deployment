@@ -531,8 +531,10 @@ body {
 
 body {
     background-color            : var(--color-body);
-    -webkit-overflow-scrolling  : touch;
-    overflow: scroll;
+    
+    -webkit-overflow-scrolling  : touch !important;
+    overflow: scroll !important;
+
     -webkit-text-size-adjust    : 100%;
     -webkit-tap-highlight-color : rgba(0, 0, 0, 0);
     -webkit-font-smoothing      : antialiased;
@@ -3419,12 +3421,6 @@ canvas {
 	height: 100vh;
 	top: 0;
 	left: 0;
-}
-
-@media screen and (max-width: 1000px) {
-    canvas {
-        display: hidden;
-    }
 }
 
 /* ------------------------------------------------------------------- 
