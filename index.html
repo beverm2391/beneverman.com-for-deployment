@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js" >
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Homepage - Ben Everman</title>
+
+    <script>
+        document.documentElement.classList.remove('no-js');
+        document.documentElement.classList.add('js');
+    </script>
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+
+</head>
+
+
+<body id="top">
+
+
+    <!-- preloader
+    ================================================== -->
+    <div id="preloader">
+        <div id="loader">
+        </div>
+    </div>
+
+
+    <!-- page wrap
+    ================================================== -->
+    <div id="page" class="s-pagewrap">
+
+
+        <!-- # site header 
+        ================================================== -->
+        <header class="s-header">
+
+            <div class="s-header__logo">
+                <a class="logo" href="index.html">
+                    <img src="images/logo-white.svg" alt="Homepage">
+                </a>
+            </div>
+
+            <a class="s-header__menu-toggle" href="#0" class="">
+                <span class="s-header__menu-text">Menu</span>
+                <span class="s-header__menu-icon"></span>
+            </a>
+
+            <nav class="s-header__nav">
+
+                <a href="#0" class="s-header__nav-close-btn" title="close"><span>Close</span></a>
+                <h3>Ben Everman</h3>
+
+                <ul class="s-header__nav-list">
+                    <li><a href="#intro" class="smoothscroll">Intro</a></li>
+                    <li><a href="#about" class="smoothscroll">About</a></li>
+                    <li><a href="#experiences" class="smoothscroll">Experiences</a></li>
+                    <li><a href="#projects" class="smoothscroll">Projects</a></li>
+                    <li><a href="#contact" class="smoothscroll">Contact</a></li>
+                </ul>
+
+                </p>
+
+                <ul class="s-header__social">
+                    <li>
+                        <a href="https://www.linkedin.com/in/beneverman/">
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 50 50" style=" fill:#000000;">    <path d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M17,20v19h-6V20H17z M11,14.47c0-1.4,1.2-2.47,3-2.47s2.93,1.07,3,2.47c0,1.4-1.12,2.53-3,2.53C12.2,17,11,15.87,11,14.47z M39,39h-6c0,0,0-9.26,0-10 c0-2-1-4-3.5-4.04h-0.08C27,24.96,26,27.02,26,29c0,0.91,0,10,0,10h-6V20h6v2.56c0,0,1.93-2.56,5.81-2.56 c3.97,0,7.19,2.73,7.19,8.26V39z"></path></svg>
+                            <span class="u-screen-reader-text">LinkedIn</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/beverm2391">
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="64" height="64" viewBox="0 0 64 64" style=" fill:#000000;"><path d="M32 6C17.641 6 6 17.641 6 32c0 12.277 8.512 22.56 19.955 25.286-.592-.141-1.179-.299-1.755-.479V50.85c0 0-.975.325-2.275.325-3.637 0-5.148-3.245-5.525-4.875-.229-.993-.827-1.934-1.469-2.509-.767-.684-1.126-.686-1.131-.92-.01-.491.658-.471.975-.471 1.625 0 2.857 1.729 3.429 2.623 1.417 2.207 2.938 2.577 3.721 2.577.975 0 1.817-.146 2.397-.426.268-1.888 1.108-3.57 2.478-4.774-6.097-1.219-10.4-4.716-10.4-10.4 0-2.928 1.175-5.619 3.133-7.792C19.333 23.641 19 22.494 19 20.625c0-1.235.086-2.751.65-4.225 0 0 3.708.026 7.205 3.338C28.469 19.268 30.196 19 32 19s3.531.268 5.145.738c3.497-3.312 7.205-3.338 7.205-3.338.567 1.474.65 2.99.65 4.225 0 2.015-.268 3.19-.432 3.697C46.466 26.475 47.6 29.124 47.6 32c0 5.684-4.303 9.181-10.4 10.4 1.628 1.43 2.6 3.513 2.6 5.85v8.557c-.576.181-1.162.338-1.755.479C49.488 54.56 58 44.277 58 32 58 17.641 46.359 6 32 6zM33.813 57.93C33.214 57.972 32.61 58 32 58 32.61 58 33.213 57.971 33.813 57.93zM37.786 57.346c-1.164.265-2.357.451-3.575.554C35.429 57.797 36.622 57.61 37.786 57.346zM32 58c-.61 0-1.214-.028-1.813-.07C30.787 57.971 31.39 58 32 58zM29.788 57.9c-1.217-.103-2.411-.289-3.574-.554C27.378 57.61 28.571 57.797 29.788 57.9z"></path></svg>
+                            <span class="u-screen-reader-text">GitHub</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+        </header> <!-- end s-header -->
+
+        <!-- # site-content
+        ================================================== -->
+        <section id="content" class="s-content">
+
+            <!-- intro
+            ----------------------------------------------- -->
+            <section id="intro" class="s-intro target-section">
+
+                <!-- <div class="s-intro__bg rellax" data-rellax-speed="-5"></div> -->
+                
+                <!-- <div class="intro-for-resize"> -->
+
+                <div class="intro-new-formatting">
+
+                    <h1 class="s-intro__title">Ben Everman</h1>
+
+                    <span>
+                        <h3 class="s-intro__pretitle">Student, Developer, Social Worker
+                            <div class="s-intro-icons">
+                                <a href="https://www.linkedin.com/in/beneverman/">
+                                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 50 50" style=" fill:#000000;">    <path d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M17,20v19h-6V20H17z M11,14.47c0-1.4,1.2-2.47,3-2.47s2.93,1.07,3,2.47c0,1.4-1.12,2.53-3,2.53C12.2,17,11,15.87,11,14.47z M39,39h-6c0,0,0-9.26,0-10 c0-2-1-4-3.5-4.04h-0.08C27,24.96,26,27.02,26,29c0,0.91,0,10,0,10h-6V20h6v2.56c0,0,1.93-2.56,5.81-2.56 c3.97,0,7.19,2.73,7.19,8.26V39z"></path></svg>
+                                    <span class="u-screen-reader-text">LinkedIn</span>
+                                </a>
+                                <a href="https://github.com/beverm2391">
+                                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="64" height="64" viewBox="0 0 64 64" style=" fill:#000000;"><path d="M32 6C17.641 6 6 17.641 6 32c0 12.277 8.512 22.56 19.955 25.286-.592-.141-1.179-.299-1.755-.479V50.85c0 0-.975.325-2.275.325-3.637 0-5.148-3.245-5.525-4.875-.229-.993-.827-1.934-1.469-2.509-.767-.684-1.126-.686-1.131-.92-.01-.491.658-.471.975-.471 1.625 0 2.857 1.729 3.429 2.623 1.417 2.207 2.938 2.577 3.721 2.577.975 0 1.817-.146 2.397-.426.268-1.888 1.108-3.57 2.478-4.774-6.097-1.219-10.4-4.716-10.4-10.4 0-2.928 1.175-5.619 3.133-7.792C19.333 23.641 19 22.494 19 20.625c0-1.235.086-2.751.65-4.225 0 0 3.708.026 7.205 3.338C28.469 19.268 30.196 19 32 19s3.531.268 5.145.738c3.497-3.312 7.205-3.338 7.205-3.338.567 1.474.65 2.99.65 4.225 0 2.015-.268 3.19-.432 3.697C46.466 26.475 47.6 29.124 47.6 32c0 5.684-4.303 9.181-10.4 10.4 1.628 1.43 2.6 3.513 2.6 5.85v8.557c-.576.181-1.162.338-1.755.479C49.488 54.56 58 44.277 58 32 58 17.641 46.359 6 32 6zM33.813 57.93C33.214 57.972 32.61 58 32 58 32.61 58 33.213 57.971 33.813 57.93zM37.786 57.346c-1.164.265-2.357.451-3.575.554C35.429 57.797 36.622 57.61 37.786 57.346zM32 58c-.61 0-1.214-.028-1.813-.07C30.787 57.971 31.39 58 32 58zM29.788 57.9c-1.217-.103-2.411-.289-3.574-.554C27.378 57.61 28.571 57.797 29.788 57.9z"></path></svg>
+                                    <span class="u-screen-reader-text">GitHub</span>
+                                </a>
+                            </div>
+                        </h3>
+                    </span>
+                </div>   
+
+                <div class="s-intro__scroll">
+                    <a href="#about" class="smoothscroll">
+                        <span>Scroll Down</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: rotate(180deg);msFilter:progid:DXImageTransform.Microsoft.BasicImage(rotation=2);"><path d="M21 11H6.414l5.293-5.293-1.414-1.414L2.586 12l7.707 7.707 1.414-1.414L6.414 13H21z"></path></svg>
+                    </a>
+                </div> <!-- s-intro__scroll -->
+
+            </section> <!-- end s-intro -->
+
+            <!-- About V2
+            ----------------------------------------------- -->
+            <section id="about" class="i-about">
+                <div class="i-about-me-intro">
+                    <div class="row">
+                        <div class="column lg-12 centered i-about-me-heading" data-animate-block>
+                            <h1 class="i-about-me-heading-text-2" data-animate-el>About Me</h1>
+                        </div>
+                    </div>
+
+                    <div class="row u-add-bottom">
+
+                        <div class="column lg-6 tab-12 centered" data-animate-block>
+                            <img class="i-about-me-image" src="images/i-about/headshot-square-v1.png" alt="Me" data-animate-el>
+                        </div>
+
+                        <div class="column lg-6 tab-12" data-animate-block> 
+                            <h3 class="u-add-bottom" data-animate-el>My Personal Story</h3>
+                            <p class="drop-cap" data-animate-el>
+                                I have spent the past eight years living with mental illness. I’ve been diagnosed with treatment-resistant depression (non-responsive to pharmacology), OCD, and generalized anxiety disorder, among other things. The treatment-resistant nature of the depression forced me to seek out more intense interventions such as Electroconvulsive Therapy (ECT) and Transcranial Magnetic Stimulation (TMS). Since I have had access to the care I need, I have been in complete remission for about two and a half years. I recognize that I am incredibly privileged to have received such a high quality of care, so my mission is to combine my lived experience with professional education in social work and business administration to serve others who are still experiencing mental illness.
+                            </p>
+                        </div>
+
+                    </div>
+                        <div class="row i-about-mission" data-animate-block>
+                            <h3 class="u-add-bottom i-about-text-centered" data-animate-el>My Professional Mission</h3>
+                            <p class='drop-cap' data-animate-el>
+                                I recently finished my B.B.A in Management from the University of Georgia in May '22. Now, I'm in the process of obtaining my Master’s of Business Administration (MBA) and my Master's of Social Work (MSW) at Kennesaw State University in Atlanta, GA, with a projected graduation date of August '24. I believe that the combination of education in organizational management and clinical social work will uniquely synergize to help me facilitate systemic change in mental healthcare. I envision myself leveraging these competencies to build a non-profit organization focused on providing data-driven, financially sustainable, and socially equitable mental healthcare.
+                            </p>
+                        </div>
+                    </div> 
+                </div>
+            </section>
+
+            <!-- Experiences (formerly Services)
+            ----------------------------------------------- -->
+            <section id="experiences" class="experiences">
+
+                <div class="experiences__bg"></div>
+                
+                <div class="row narrow section-header section-header--dark" data-animate-block>
+                    <div class="column lg-12" data-animate-el>
+                        
+                        <h3 class="text-pretitle">Experiences</h3>
+                        <a class="btn btn--stroke e-margin-top" href="Resume_Ben_Everman.pdf" download>View/Download Full Resume</a>
+                        <!-- <h3 class="text-pretitle">Experience</h3> -->
+                        
+                    </div> <!-- end column -->
+                </div> <!-- end section header -->
+
+                <div class="experiences__content" data-animate-block>
+
+                    <div class="row" data-animate-el>
+                        <table class="e-table border-top" data-animate-el>
+                            <tr>
+                                <td class="e-h3">Education</td>
+                                <td>
+                                    <ul class="e-ul">
+                                        <!-- potentially change code below from button to a, only if I have any more issues. For now, "if it ain't broke, don't fix it". -->
+                                        <a class="collapsible">Master's of Business Adminstration - In Progress</a>
+                                        <div class="collapsible-content">
+                                            <ul>
+                                                <li>Kennesaw State University, Projected Class of '24</li>
+                                            </ul>
+                                        </div>
+
+                                        <a class="collapsible">Master's of Social Work - In Progress</a>
+                                        <div class="collapsible-content">
+                                            <ul>
+                                                <li>Kennesaw State University, Projected Class of '24</li>
+                                            </ul>
+                                        </div>
+
+                                        <a class="collapsible">Management B.B.A</a>
+                                        <div class="collapsible-content">
+                                            <ul>
+                                                <li>University of Georgia, Class of '22</li>
+                                            </ul>
+                                        </div>
+                                    </ul>
+                                </td>   
+                            </tr>
+                            <tr>
+                                <td class="e-h3">Work Experience</td>
+                                <td>
+                                    <ul class="e-ul-static">
+                                        <li>Freelance Music Producer</li>
+                                        <li>Youth Gymnastics Coach</li>
+                                        <li>Restaurant Server</li>
+                                    </ul>
+                                </td>   
+                            </tr>
+                            <tr>
+                                <td class="e-h3">Development</td>
+                                <td>
+                                    <ul class="e-ul-static">                                                           
+                                        <a class="collapsible">General Development</a>
+                                        <div class="collapsible-content">
+                                            <ul class="e-ul-static">
+                                                <li>Python - Application Development</li>
+                                                <li>Python - Task Automation</li>
+                                            </ul>
+                                        </div>
+                                        <a class="collapsible">Web Development</a>
+                                        <div class="collapsible-content">
+                                            <ul class="e-ul-static">
+                                                <li>HTML, CSS, JavaScript</li>
+                                                <li>Python, Django Framework</li>
+                                            </ul>
+                                        </div>
+                                        <!-- <li>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                                                </svg>
+                                                <a href="projects.html">Projects &nbsp;</a>
+                                        </li>                                             -->
+                                        <li>
+                                            <a href="projects.html" class="projects-prompt">see my projects on the projects page*<a>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="e-h3">Hard Skills</td>
+                                <td>
+                                    <ul class="e-ul-static">
+                                        <li>Organizational Management</li>
+                                        <li>Project Management</li>
+                                        <li>Business Analytics</li>
+                                        <a class="collapsible">Excel VBA</a>
+                                            <div class="collapsible-content">
+                                                <ul>
+                                                    <li>Project: Higher Education Financial Analysis</li>
+                                                </ul>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <!-- <tr>
+                                <td class="e-h3">Soft Skills</td>
+                                <td>
+                                    <ul class="e-ul-static">
+                                        <li>Critical Thinking</li>
+                                        <li>Emotional Intelligence</li>
+                                        <li>Innovative Thinking</li>
+                                        <li>Adaptability</li>
+                                    </ul>
+                                </td>
+                            </tr> -->
+                        </table>
+
+                    </div>
+                
+                </div>  			
+
+                <div class="experiences__scroll">
+                    <a href="#projects" class="smoothscroll">
+                        <span class="black-text">Next Are My Projects</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: rotate(180deg);msFilter:progid:DXImageTransform.Microsoft.BasicImage(rotation=2);"><path d="M21 11H6.414l5.293-5.293-1.414-1.414L2.586 12l7.707 7.707 1.414-1.414L6.414 13H21z"></path></svg>
+                    </a>
+                </div> 
+
+            </section> <!-- end services -->
+
+            <!-- projects
+            ----------------------------------------------- -->
+
+            <section id="projects" class="p-container-homepage">
+
+                <!-- <div class="infinite-pattern-wrapper-2"> -->
+                <div class="p-wrapper">
+
+                    <!-- heading -->
+                    <div class="p-heading">
+                        <div class="row">
+                            <div class="column lg-12 centered">
+                                <div class="dark-mode-visible">
+                                    <h3 class="p-text-pretitle">Projects</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- actual content -->
+                    <div class="p-content">
+                        <div class="row">
+                            <div class="column lg-12">
+                            
+                                <div class="fp-content-block">
+
+                                    <div>   
+                                        <h2 class="fp-pretitle">Featured Project:</h2>
+                                        <a href="#">
+                                            <h2 class="fp-title">OpenAI Experiments</h2>
+                                        </a>
+                                    </div>
+
+                                    <div class="row">
+                                        <img src="images/OpenAI/openai-GPT-3-2.jpeg" class="featured-project-image">
+                                    </div>
+
+                                    <div class="row">
+                                        <a href="" class="fp-data-card">
+                                            <p>I began experimenting with OpenAI's GPT-3 AI back in December 2021. My long term goal is to apply AI to mental healhcare diagnostics, so I figured I'd start by coming up with a few basic use cases of the AI to familiarize myself with its disposition. So far I have used the completions mode to iterate over PDFs/Powerpoints and summarize them, and to generate human-like responses to dicussion posts, text messages, and emails.</p>
+                                            <!-- <span class="click-prompt">read more &nbsp;
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                                                </svg>
+                                            </span> -->
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="link-to-projects-page">
+                                    <a href="projects.html" class="btn btn--medium">Check Out My Other Projects</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>  
+            
+                <!-- </div> -->
+                </div>
+
+            </section>
+
+            <!-- contact
+            ----------------------------------------------- -->
+            <section id="contact" class="s-contact target-section">
+
+                <div class="row section-header section-header--dark">
+
+                    <div class="column lg-12">
+                        
+                        <h3 class="text-pretitle white-text">Get In Touch</h3>
+                        <ul class="s-header__social centered">
+                            <li>
+                                <a href="https://www.linkedin.com/in/beneverman/">
+                                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 50 50" style=" fill:#000000;">    <path d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M17,20v19h-6V20H17z M11,14.47c0-1.4,1.2-2.47,3-2.47s2.93,1.07,3,2.47c0,1.4-1.12,2.53-3,2.53C12.2,17,11,15.87,11,14.47z M39,39h-6c0,0,0-9.26,0-10 c0-2-1-4-3.5-4.04h-0.08C27,24.96,26,27.02,26,29c0,0.91,0,10,0,10h-6V20h6v2.56c0,0,1.93-2.56,5.81-2.56 c3.97,0,7.19,2.73,7.19,8.26V39z"></path></svg>
+                                    <span class="u-screen-reader-text">LinkedIn</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/beverm2391">
+                                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="64" height="64" viewBox="0 0 64 64" style=" fill:#000000;"><path d="M32 6C17.641 6 6 17.641 6 32c0 12.277 8.512 22.56 19.955 25.286-.592-.141-1.179-.299-1.755-.479V50.85c0 0-.975.325-2.275.325-3.637 0-5.148-3.245-5.525-4.875-.229-.993-.827-1.934-1.469-2.509-.767-.684-1.126-.686-1.131-.92-.01-.491.658-.471.975-.471 1.625 0 2.857 1.729 3.429 2.623 1.417 2.207 2.938 2.577 3.721 2.577.975 0 1.817-.146 2.397-.426.268-1.888 1.108-3.57 2.478-4.774-6.097-1.219-10.4-4.716-10.4-10.4 0-2.928 1.175-5.619 3.133-7.792C19.333 23.641 19 22.494 19 20.625c0-1.235.086-2.751.65-4.225 0 0 3.708.026 7.205 3.338C28.469 19.268 30.196 19 32 19s3.531.268 5.145.738c3.497-3.312 7.205-3.338 7.205-3.338.567 1.474.65 2.99.65 4.225 0 2.015-.268 3.19-.432 3.697C46.466 26.475 47.6 29.124 47.6 32c0 5.684-4.303 9.181-10.4 10.4 1.628 1.43 2.6 3.513 2.6 5.85v8.557c-.576.181-1.162.338-1.755.479C49.488 54.56 58 44.277 58 32 58 17.641 46.359 6 32 6zM33.813 57.93C33.214 57.972 32.61 58 32 58 32.61 58 33.213 57.971 33.813 57.93zM37.786 57.346c-1.164.265-2.357.451-3.575.554C35.429 57.797 36.622 57.61 37.786 57.346zM32 58c-.61 0-1.214-.028-1.813-.07C30.787 57.971 31.39 58 32 58zM29.788 57.9c-1.217-.103-2.411-.289-3.574-.554C27.378 57.61 28.571 57.797 29.788 57.9z"></path></svg>
+                                    <span class="u-screen-reader-text">GitHub</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div> <!-- end column -->
+
+                    <div class="column lg-12">
+                        <h2 class="white-text contact-header-h2">Share similar interests? Have some feedback? Don't hesitate to reach out.</h2>
+                        <a href="mailto:contact.beneverman.com" class="contact-email">contact@beneverman.com</a>
+                        <h5>I check this regularly!</h5>
+                    </div>
+
+                </div> <!-- end section header -->
+
+            </section> <!-- end contact -->
+
+        </section> 
+        <!-- end s-content -->
+
+
+        <!-- footer
+        ================================================== -->
+        <footer id="footer" class="s-footer">
+
+            <div class="row">
+                <div class="column lg-12 ss-copyright">
+                    <span>Designed by Ben Everman, with the help of the internet</span>
+                </div>
+            </div>
+
+            <div class="ss-go-top">
+                <a class="smoothscroll" title="Back to Top" href="#top">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M6 4h12v2H6zm5 10v6h2v-6h5l-6-6-6 6z"></path></svg>
+                </a>
+            </div> <!-- end ss-go-top -->
+        </footer> <!-- end s-footer -->
+
+    </div> <!-- end s-pagewrap -->
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="js/plugins-index.js"></script>
+    <script src="js/main-index.js"></script>
+
+    <!-- fluid hero background -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js'></script>
+    <script src='https://robindelaporte.fr/codepen/bundle.js'></script>
+    <script  src="js/fluid-text.js"></script>
+
+</body>
+</html>
