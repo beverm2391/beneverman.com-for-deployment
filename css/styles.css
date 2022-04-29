@@ -3505,6 +3505,12 @@ canvas {
     }
 }
 
+@media screen and (max-width: 620px) {
+    .s-intro__scroll{
+    display: none;
+    }
+}
+
 /* ===================================================================
  * # HOMEPAGE - ABOUT
  *
@@ -3600,7 +3606,7 @@ canvas {
 
 .i-about-me-heading-text-2 {
     --text-title-size : 10.4rem;
-    --text-multiplier : 1;
+    /* --text-multiplier : 1; */
     font-weight       : 700;
     font-size         : calc(var(--text-title-size) * var(--text-multiplier));
     line-height       : 1.1154;
@@ -3742,6 +3748,7 @@ canvas {
     --text-desc-size  : 3.8rem;
     --text-multiplier : 1;
     --btn-letter-spacing : .35em;
+    --line-height : 1.8em;
 }
 
 .experiences__content {
@@ -3860,6 +3867,7 @@ hr {
     align-items : bottom;
     /* remove bullets from ul class, so I can manually edit and move them */
     list-style-type: none;
+    line-height : var(--line-height);
 }
 
 /* needs ot be the before psuedoclass beccause the list is set to go right to left */
@@ -3942,6 +3950,7 @@ hr {
     /* line-height : normal; */
     /* --btn-height: var(--vspace-btn); */
     --btn-height: normal;
+
 }
 
 .collapsible::after {
@@ -3991,6 +4000,7 @@ hr {
     margin-bottom : 0;
     font-size: var(--text-sm);
     color : rgb(0, 69, 143);
+    font-size : calc(var(--text-desc-size) * var(--text-multiplier) * .5)
 }
 
 .projects-prompt:hover {
@@ -4047,7 +4057,7 @@ hr {
 
 @media screen and (max-width: 1400px) {
     .experiences {
-        --text-multiplier : 0.9;
+        --text-multiplier : 1;
     }
 
     .experiences__content {
@@ -4057,7 +4067,7 @@ hr {
 
 @media screen and (max-width: 1000px) {
     .experiences {
-        --text-multiplier : 0.8;
+        --text-multiplier : 1;
     }
 
     .experiences__content {
@@ -4067,23 +4077,29 @@ hr {
 
 @media screen and (max-width: 800px) {
     .experiences {
-        --text-multiplier : 0.7;
+        --text-multiplier : 0.9;
     }
 }
 
 @media screen and (max-width: 700px) {
     .experiences {
-        --text-multiplier : 0.65;
+        --text-multiplier : 0.8;
     }
 }
 
 @media screen and (max-width: 600px) {
     .experiences {
-        --text-multiplier : 0.6;
+        --text-multiplier : 0.7;
     }
 
     td {
         padding: 0;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .experiences {
+        --text-multiplier : 0.6;
     }
 }
 
@@ -4343,13 +4359,13 @@ hr {
 
 @media screen and (max-width: 700px) {
     .p-container-homepage {
-        --text-multiplier : 0.6;
+        --text-multiplier : 0.65;
     }
 }
 
 @media screen and (max-width: 600px) {
     .p-container-homepage {
-        --text-multiplier : 0.5;
+        --text-multiplier : 0.6;
     }
     .link-to-projects-page > .btn {
         margin: auto;
@@ -4361,16 +4377,21 @@ hr {
 
 @media screen and (max-width: 450px) {
     .p-container-homepage {
-        --text-multiplier : 0.4;
+        --text-multiplier : 0.55;
     }
 }
 
 @media screen and (max-width: 400px) {
     .p-container-homepage {
-        --text-multiplier : 0.3;
+        --text-multiplier : 0.5;
     }
 }
 
+@media screen and (max-width: 350px) {
+    .p-container-homepage {
+        --text-multiplier : 0.45;
+    }
+}
 
 /* ------------------------------------------------------------------- 
  * ## about-me page
