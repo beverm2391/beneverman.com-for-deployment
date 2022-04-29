@@ -233,5 +233,15 @@
     <script src="js/plugins-pages.js"></script>
     <script src="js/main-pages.js"></script>
 
+    <!-- google analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){window.dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+
 </body>
 </html>
