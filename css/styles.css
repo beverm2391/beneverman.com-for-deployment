@@ -527,14 +527,13 @@ html {
 html,
 body {
     height : 100%;
-    overflow-x: hidden
 }
 
 body {
     background-color            : var(--color-body);
     
-    -webkit-overflow-scrolling  : touch !important;
-    overflow: scroll !important;
+    -webkit-overflow-scrolling  : touch;
+    overflow: scroll;
 
     -webkit-text-size-adjust    : 100%;
     -webkit-tap-highlight-color : rgba(0, 0, 0, 0);
@@ -3739,6 +3738,7 @@ canvas {
 
     --text-desc-size  : 3.8rem;
     --text-multiplier : 1;
+    --btn-letter-spacing : .35em;
 }
 
 .experiences__content {
@@ -3784,6 +3784,10 @@ canvas {
 /* --------------------------------------------------------------------
  * ## experiences list
  * -------------------------------------------------------------------- */
+
+.btn-responsive {
+    letter-spacing: var(--btn-letter-spacing); 
+}
 
 hr {
     border-top: 100px solid rgb(255, 255, 255);
@@ -4083,6 +4087,7 @@ hr {
 @media screen and (max-width: 400px) {
     .experiences {
         --text-multiplier : 0.55;
+        --btn-letter-spacing : normal;
     }
 }
 
@@ -4137,6 +4142,7 @@ hr {
     padding : var(--card-padding);
     display : inherit;
     margin-bottom : var(--vspace-2);
+    overflow: hidden;
 
     background: rgba(255, 255, 255, 0.16);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -4268,6 +4274,7 @@ hr {
     color : rgb(0, 0, 0);
 
     font-size   : calc(var(--text-desc-size-rem) * 0.5 * var(--text-multiplier));
+    line-height: 2em;
 }
 
 .fp-data-card:hover > p {
@@ -4347,12 +4354,17 @@ hr {
     }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
     .p-container-homepage {
         --text-multiplier : 0.4;
     }
 }
 
+@media screen and (max-width: 400px) {
+    .p-container-homepage {
+        --text-multiplier : 0.3;
+    }
+}
 
 
 /* ------------------------------------------------------------------- 
@@ -4951,6 +4963,7 @@ a > span {
 
 .contact-header-h2 {
     font-family: var(--font-1);
+    font-size: calc(var(--text-multiplier) * var(--text-desc-size))
 }
 
 .s-contact h5 {
@@ -5118,17 +5131,8 @@ a > span {
  * contact
  * ------------------------------------------------------------------- */
 @media screen and (max-width: 800px) {
-    .s-contact__mail-block {
-        padding-top : 0;
-    }
-
-    .s-contact__mail-block::before {
-        display : none;
-    }
-
-    .btn--mail {
-        width         : 100%;
-        margin-bottom : var(--vspace-2_5);
+    .s-contact {
+        --text-multiplier : .8
     }
 }
 
@@ -5136,49 +5140,19 @@ a > span {
     .s-contact .text-display-title {
         --text-multiplier : .6;
     }
-
-    .s-contact__subscribe form {
-        display : block;
-    }
-
-    .s-contact__subscribe input[type="email"],
-    .s-contact__subscribe input[type="submit"],
-    .s-contact__subscribe .mc-status {
-        width : 100%;
-    }
-
-    .s-contact__subscribe input[type="email"] {
-        text-align    : center;
-        margin-bottom : var(--vspace-0_5);
-    }
-
-    .s-contact__subscribe .mc-status {
-        text-align : center;
-    }
 }
 
 @media screen and (max-width: 500px) {
-    .s-contact .text-display-title {
-        --text-multiplier : .55;
-    }
-
-    .s-contact h5 {
-        font-size     : calc(var(--text-size) * 1.1111);
-        margin-bottom : var(--vspace-0_375);
-    }
-
-    .s-contact__infos {
-        font-size   : var(--text-lg);
-        line-height : calc(1.375 * var(--space));
+    .s-contact {
+        --text-multiplier : .5;
     }
 }
 
 @media screen and (max-width: 400px) {
-    .s-contact .text-display-title {
-        font-size : var(--text-xl);
+    .s-contact {
+        --text-multiplier : .4;
     }
 }
-
 
 /* ===================================================================
  * # FOOTER
