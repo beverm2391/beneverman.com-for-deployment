@@ -532,6 +532,7 @@ body {
 body {
     background-color            : var(--color-body);
     -webkit-overflow-scrolling  : touch;
+    overflow: scroll;
     -webkit-text-size-adjust    : 100%;
     -webkit-tap-highlight-color : rgba(0, 0, 0, 0);
     -webkit-font-smoothing      : antialiased;
@@ -593,12 +594,6 @@ textarea {
     -moz-appearance    : none;
     appearance         : none;
 }
-
-:root {
-    overflow: scroll;
-    -webkit-overflow-scrolling: touch;
-}
-
 
 /*! added this so i could change font easier */
 
