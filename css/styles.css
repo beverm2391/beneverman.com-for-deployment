@@ -3708,6 +3708,9 @@ canvas {
     .i-about {
         --text-multiplier : 0.6;
     }
+    .i-about-mission {
+        max-width: 90%;
+    }
 }
 
 @media screen and (max-width: 400px) {
@@ -4111,8 +4114,7 @@ hr {
 
     padding-top : var(--vspace-4);
 
-    --text-desc-size  : 3.8em;
-    --text-desc-size-rem : 3.8rem;
+    --text-desc-size-rem : 1.9rem;
     --text-multiplier : 1;
 }
 
@@ -4273,7 +4275,8 @@ hr {
     /* padding-bottom : calc(.5 * var(--card-padding)); */
     color : rgb(0, 0, 0);
 
-    font-size   : calc(var(--text-desc-size-rem) * 0.5 * var(--text-multiplier));
+    /* font-size   : calc(var(--text-desc-size-rem) * var(--text-multiplier)); */
+    font-size: inherit;
     line-height: 2em;
 }
 
@@ -4301,8 +4304,9 @@ hr {
 
 .link-to-projects-page > .btn {
     /* border-radius: 10px; */
+    --btn-font-size : .7em;
 
-    font-size               : calc(var(--text-multiplier) * 0.4 * var(--text-desc-size-rem));
+    font-size               : var(--btn-font-size);
     text-transform          : uppercase;
     letter-spacing          : none;
 }
@@ -4349,6 +4353,7 @@ hr {
     }
     .link-to-projects-page > .btn {
         margin: auto;
+        --btn-font-size: .5em;
         padding-left: var(--vspace-0_125);
         padding-right : var(--vspace-0_125);
     }
@@ -4674,7 +4679,6 @@ a > span {
 
 .p-content {
     background : transparent;
-    width : 80%;
     margin : auto;
     /* padding-bottom: var(--vspace-3); */
     font-family: var(--font-1);
