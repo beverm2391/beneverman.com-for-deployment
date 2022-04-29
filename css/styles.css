@@ -594,6 +594,12 @@ textarea {
     appearance         : none;
 }
 
+:root {
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+
 /*! added this so i could change font easier */
 
 /* ===================================================================
