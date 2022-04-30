@@ -1,9 +1,4 @@
 /* =================================================================== 
- * Infinity Main Stylesheet
- * Template Ver. 2.0.0
- * 12-17-2021
- * ------------------------------------------------------------------
- *
  * TOC:
  * # SETTINGS
  *      ## fonts 
@@ -191,13 +186,13 @@
  * ## Ben's Color Pallete
  * ------------------------------------------------------------------- */
 
- :root {
+:root {
     --pallete-color-1 : #e0e1dd;
     --pallete-color-2 : #778da9;
     --pallete-color-3 : #515a77;
     --pallete-color-4 : #1b263b;
     --pallete-color-5 : #0d1b2a;
- }
+}
 
 
 /* ------------------------------------------------------------------- 
@@ -4419,6 +4414,9 @@ hr {
     .p-container-homepage {
         --text-multiplier : 0.45;
     }
+    .link-to-projects-page > .btn {
+        padding: 0 1.5rem;
+    }
 }
 
 /* ------------------------------------------------------------------- 
@@ -4910,89 +4908,6 @@ a > span {
     }
 }
 
-/* ------------------------------------------------------------------- 
- * ## clients
- * ------------------------------------------------------------------- */
-.clients-block {
-    padding-top      : var(--vspace-1_25);
-    padding-bottom   : calc(2.25 * var(--space));
-    background-color : var(--color-gray-4);
-}
-
-.clients {
-    margin-top     : var(--vspace-1_5);
-    padding-bottom : var(--vspace-1_75);
-}
-
-.clients__slide img {
-    margin     : 0;
-    opacity    : .4;
-    transform  : scale(0.85);
-    transition : all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-
-.clients__slide:focus img,
-.clients__slide:hover img {
-    transform : scale(1);
-    opacity   : 1;
-}
-
-/* ------------------------------------------------------------------- 
- * responsive:
- * works
- * ------------------------------------------------------------------- */
-@media screen and (max-width: 800px) {
-    .folio-item__title {
-        font-size : calc(var(--text-size) * 0.8889);
-    }
-
-    .folio-item__cat {
-        font-size : calc(var(--text-size) * 0.7778);
-    }
-
-    .testimonials {
-        max-width : 600px;
-    }
-}
-
-@media screen and (max-width: 700px) {
-    .folio-list .brick {
-        float : none;
-        width : auto;
-    }
-
-    .folio-item__title {
-        font-size : var(--text-size);
-    }
-
-    .folio-item__cat {
-        font-size : 1.2rem;
-    }
-
-    .testimonials {
-        --text-multiplier : .9;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .testimonials {
-        --text-multiplier : .8;
-    }
-}
-
-@media screen and (max-width: 500px) {
-    .testimonials {
-        --text-multiplier : .65;
-    }
-}
-
-@media screen and (max-width: 400px) {
-    .testimonial-slider__slide p {
-        font-size : 2.1rem;
-    }
-}
-
-
 /* ===================================================================
  * # CONTACT
  *
@@ -5049,134 +4964,26 @@ a > span {
     max-width : 1020px;
 }
 
-/* .s-contact .section-header a {
-    color : var(--color-1);
-} */
-
 .contact-email {
     font-size: calc(var(--text-multiplier) * var(--text-desc-size))
 }
 
-/* ------------------------------------------------------------------- 
- * ## contact infos
- * ------------------------------------------------------------------- */
-.s-contact__infos {
-    margin-top  : var(--vspace-3_5);
-    font-family : var(--font-2);
-    font-weight : 400;
-    font-size   : calc(var(--text-size) * 1.556);
-    line-height : var(--vspace-1_5);
-    color       : white;
-    position    : relative;
+/* icons */
+.s-contact-icons svg {
+    display: flex;
+    height : var(--vspace-0_75);
+    width  : var(--vspace-0_75);
+    vertical-align: middle;
+    margin: 0 .5rem;
 }
 
-.s-contact__infos [class*="s-contact__block"] {
-    padding-bottom : var(--vspace-1);
+.s-contact-icons svg path {
+    fill : white;
 }
 
-.s-contact__list {
-    list-style  : none;
-    margin-left : 0;
-}
-
-.s-contact__list a {
-    color : white;
-}
-
-.s-contact__list a:focus,
-.s-contact__list a:hover {
-    color : var(--color-1);
-}
-
-.s-contact__list li {
-    padding-left : 0;
-}
-
-/* ------------------------------------------------------------------- 
- * ## contact bottom
- * ------------------------------------------------------------------- */
-.s-contact__bottom {
-    --btn-input-height : var(--vspace-2);
-    margin-top         : var(--vspace-0_5);
-    position           : relative;
-}
-
-/* mail button block
- */
-.s-contact__mail-block {
-    padding-top : calc(var(--vspace-0_875) + var(--vspace-1));
-    position    : relative;
-}
-
-.s-contact__mail-block::before {
-    content          : "";
-    display          : block;
-    width            : 200px;
-    height           : 1px;
-    background-color : var(--color-border);
-    position         : absolute;
-    top              : calc(var(--vspace-0_875) / 2);
-    left             : var(--gutter);
-}
-
-.btn--mail {
-    --btn-height : var(--btn-input-height);
-    border       : 2px solid var(--color-1);
-    color        : white;
-    margin       : 0;
-}
-
-.btn--mail:focus,
-.btn--mail:hover {
-    background-color : var(--color-1) !important;
-    color            : black;
-}
-
-/* subscription form
- */
-.s-contact__subscribe {
-    --input-height : var(--btn-input-height);
-    --btn-width    : 180px;
-}
-
-.s-contact__subscribe form {
-    display       : flex;
-    flex-flow     : row wrap;
-    margin-bottom : 0;
-}
-
-.s-contact__subscribe input[type="email"],
-.s-contact__subscribe input[type="submit"],
-.s-contact__subscribe .ms-status {
-    flex : none;
-}
-
-.s-contact__subscribe input[type="email"] {
-    width            : calc(100% - var(--btn-width));
-    background-color : rgba(255, 255, 255, 0.05);
-    font-size        : var(--text-sm);
-    color            : white;
-    border           : none;
-    padding          : var(--input-vpadding) calc(2.8rem - 1px);
-    text-align       : left;
-    margin           : 0;
-}
-
-.s-contact__subscribe input[type="submit"] {
-    --btn-height     : var(--btn-input-height);
-    background-color : var(--color-1);
-    border           : 2px solid var(--color-1);
-    color            : black;
-    width            : var(--btn-width);
-    margin           : 0;
-}
-
-.s-contact__subscribe .mc-status {
-    width       : 100%;
-    margin-top  : var(--vspace-0_75);
-    font-family : var(--font-2);
-    font-size   : var(--text-sm);
-    color       : var(--color-1);
+.s-contact-icons svg:hover path {
+    fill       : rgba(255, 255, 255, 0.15);
+    transition : all 0.15s ease-in-out;
 }
 
 /* ------------------------------------------------------------------- 
@@ -5230,28 +5037,6 @@ a > span {
 .s-footer a:focus,
 .s-footer a:hover {
     color : var(--color-1);
-}
-
-/* ------------------------------------------------------------------- 
- * ## copyright
- * ------------------------------------------------------------------- */
-.ss-copyright {
-    padding-right : var(--vspace-2);
-}
-
-.ss-copyright span {
-    display : inline-block;
-}
-
-.ss-copyright span::after {
-    content : "|";
-    display : inline-block;
-    padding : 0 1rem 0 1.2rem;
-    color   : rgba(255, 255, 255, 0.05);
-}
-
-.ss-copyright span:last-child::after {
-    display : none;
 }
 
 /* ------------------------------------------------------------------- 
