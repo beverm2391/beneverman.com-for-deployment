@@ -3261,9 +3261,14 @@ img.u-pull-left {
 }
 
 .intro-new-formatting {
-    position : absolute;
-    bottom : 5%;
-    left : 2%;
+    display : flex;
+    flex-direction : column;
+    height          : 100vh;
+    align-items     : center;
+    justify-content : center;
+    text-align      : center;
+    margin: auto;
+    position : relative;
     z-index : 1; 
 }
 
@@ -3322,19 +3327,36 @@ img.u-pull-left {
  * ## intro social
  * -------------------------------------------------------------------- */
 
- .s-intro-icons{
+.container {
     position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.s-intro-icons{
+    float: right;
+    margin-left: .5em;
+}
+
+.s-intro-icons > a {
     display: inline-block;
-    margin-bottom: 0;
+    vertical-align: middle;
 }
 
 .s-intro-icons svg {
-    height : var(--vspace-0_625);
-    width  : var(--vspace-0_625);
+    display: inline;
+    height : var(--vspace-0_75);
+    width  : var(--vspace-0_75);
+    vertical-align: middle;
 }
 
 .s-intro-icons svg path {
     fill : white;
+}
+
+.s-intro-icons svg:hover path {
+    fill       : rgba(255, 255, 255, 0.15);
+    transition : all 0.15s ease-in-out;
 }
 
 .s-intro__social {
@@ -3483,7 +3505,7 @@ canvas {
 
 @media screen and (max-width: 500px) {
     .s-intro__pretitle {
-        font-size : calc(var(--text-size) * 0.8889);
+        font-size : calc(var(--text-size) * 0.65);
     }
 
     .s-intro__title {
@@ -3491,7 +3513,7 @@ canvas {
     }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
     .s-intro__title {
         --text-multiplier : .38;
     }
@@ -3502,6 +3524,11 @@ canvas {
 
     .s-intro__scroll {
         right : 4.6rem;
+    }
+
+    .s-intro-icons svg {
+        height : var(--vspace-0_375);
+        width  : var(--vspace-0_375);
     }
 }
 
@@ -3716,6 +3743,7 @@ canvas {
     }
     .i-about-mission {
         max-width: 90%;
+        padding: var(--vspace-1);
     }
 }
 

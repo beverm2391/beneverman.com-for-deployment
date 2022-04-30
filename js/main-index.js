@@ -44,7 +44,7 @@
         opacity: [0, 1]
     }, '-=200')
     .add({
-        targets: ['.s-intro__title', '.s-intro__pretitle', '.s-intro__more'],
+        targets: ['.s-intro__title', '.s-intro__pretitle', '.s-intro__more', '.s-intro-icons'],
         translateY: [100, 0],
         opacity: [0, 1],
         delay: anime.stagger(200)
