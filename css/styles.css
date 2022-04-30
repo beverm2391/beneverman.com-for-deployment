@@ -4091,10 +4091,6 @@ hr {
     .experiences {
         --text-multiplier : 0.7;
     }
-
-    td {
-        padding: 0;
-    }
 }
 
 @media screen and (max-width: 500px) {
@@ -4106,7 +4102,11 @@ hr {
 @media screen and (max-width: 400px) {
     .experiences {
         --text-multiplier : 0.55;
-        --btn-letter-spacing : normal;
+        --btn-letter-spacing : .15em;
+    }
+    td {
+        padding-left: 0;
+        padding-right: 0;
     }
 }
 
@@ -4321,10 +4321,11 @@ hr {
 .link-to-projects-page > .btn {
     /* border-radius: 10px; */
     --btn-font-size : .7em;
+    --letter-spacing: .35em;
 
     font-size               : var(--btn-font-size);
     text-transform          : uppercase;
-    letter-spacing          : none;
+    letter-spacing          : var(--letter-spacing);
 }
 
 /* --------------------------------------------------------------------
@@ -4369,9 +4370,8 @@ hr {
     }
     .link-to-projects-page > .btn {
         margin: auto;
-        --btn-font-size: .5em;
-        padding-left: var(--vspace-0_125);
-        padding-right : var(--vspace-0_125);
+        --btn-font-size: .7em;
+        --letter-spacing: .15em;
     }
 }
 
