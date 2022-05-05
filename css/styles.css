@@ -3954,60 +3954,14 @@ hr {
     justify-self: center;
 }
 
-/* this is all the stuff applied to the button class */
-/* these params below dont affect anything, i just left them there so i could see what attributes i needed to override */
-.buttonstuff {
-    --btn-height            : inheret  ;
-    display                 : flex;
-    font-family             : var(--font-2);
-    font-weight             : 500;
-    font-size               : var(--text-xs);
-    text-transform          : uppercase;
-    letter-spacing          : .35em;
-    height                  : var(--btn-height);
-    line-height             : calc(var(--btn-height) - 4px);
-    padding                 : 0 3.6rem;
-    margin                  : 0 0.4rem var(--vspace-0_5) 0;
-    color                   : var(--color-btn-text);
-    text-decoration         : none;
-    text-align              : center;
-    white-space             : nowrap;
-    cursor                  : pointer;
-    transition              : all .3s;
-    background-color        : var(--color-btn);
-    border                  : 2px solid var(--color-btn);
-    -webkit-font-smoothing  : antialiased;
-    -moz-osx-font-smoothing : grayscale;
-}
-
-/* im using this class to override the typical button styles */
-.collapsible {
-    background: transparent;
-    cursor: pointer;
-    padding: 0px;
-    border: none;
-    /* text-align: right; */
-    text-transform : none;
-    letter-spacing : inherit;
-    font-family : var(--font-2);
-    font-size : calc(var(--text-desc-size) * var(--text-multiplier) * .5);
-    margin : 0;
-    color : rgba(0, 0, 0, 0.8);
-    padding : 0;
-    /* height: 1rem; */
-    /* line-height : normal; */
-    /* --btn-height: var(--vspace-btn); */
-    --btn-height: normal;
-
-}
-
+/* collapsible things */
 .collapsible::after {
     content : '+';
     float: right;
     margin-left : var(--vspace-0_125)
 }
 
-.active:after {
+.collapsible.active:after {
     content: "-";
 }
 
@@ -4547,7 +4501,7 @@ hr {
 
 /* use this var to control padding inside cards */
     --card-padding : 30px;
-/* use this var to control border radiuw of cards */
+/* use this var to control border radius of cards */
     --card-radius: 10px;
     --card-background-color: rgba(255, 255, 255, .98);
     --border-width : 2px;
@@ -4717,36 +4671,40 @@ a > span {
  * ------------------------------------------------------------------- */
 
 .p-container {
-    background-image : url(../images/projects/projects-bg.jpg);
+    /* background-image : url(../images/projects/projects-bg.jpg); */
     background-size : cover;
     padding-bottom : var(--vspace-2);
+    background-color: white;
 
-    /* use this var to control padding inside cards */
-    --card-padding : 30px;
-    /* use this var to control border radiuw of cards */
-    --card-radius: 10px;
-    --card-background-color: rgba(50, 50, 50, 0.98);
+    --card-padding : 20px;
+    --card-radius: 17px;
+
+    --card-bg-color: #6F2929;
+    --desc-card-bg-color: #26355C;
     --card-text-color: white;
+    --card-hover-bg-color : #d93e3e;
+
+    --text-multiplier : 1;
+    --text-size : 1em;
+
+    --hyperlink-hover-color: white;
 
     z-index: 0;
-    font-size: var(--base-font-size)
 }
 
-.p-page-heading {
+.p-heading {
     margin-top: var(--vspace-2);
     margin-bottom: var(--vspace-2);
 }
 
-.p-page-heading-text {
-    --text-title-size : 10.4rem;
-    --text-multiplier : 1;
+.p-heading-text {
+    --text-title-size : 5.4rem;
     font-weight       : 700;
     font-size         : calc(var(--text-title-size) * var(--text-multiplier));
     line-height       : 1.1154;
-    color             : rgb(255, 255, 255);
+    color             : rgb(0, 0, 0);
     margin-top        : 0;
     margin-bottom     : var(--vspace-2_2);
-    color: white;
 }
 
 .p-content {
@@ -4756,107 +4714,157 @@ a > span {
     font-family: var(--font-1);
 }
 
-.white-text {
-    color : white;
-}
+.p-column {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
 
-.black-text {
-    color : black;
-}
+    /* when you change this, update the media query below that prevents the auto margins from completely disappearing */
+    max-width: 900px;
+    margin: auto;
+    grid-auto-rows: minmax(100px, auto);
 
-.font-1 {
-    font-family: var(--font-1);
-}
-
-.p-content-block {
-    border-radius: var(--card-radius);
-    padding : var(--card-padding);
-    display : inherit;
-    margin-bottom : var(--vspace-2);
-    /* background: transparent; */
-
-    background: rgba(255, 255, 255, 0.16);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.p-content-block > h2, h3, h4, h5 {
-    margin-top: 0;
-}
-
-.p-content-block > h2 {
-    text-align : center;
-    margin-bottom : var(--vspace-2);
-}
-
-.p-card {
-    background-color: var(--card-background-color);
-    padding: var(--card-padding);
-    margin-bottom: var(--vspace-1_25);
-    border-radius : var(--card-radius);
-    color : var(--card-text-color);
-    text-align: center;
-}
-
-.p-data-card > p {
-    margin-bottom: 0;
-    /* padding-bottom : calc(.5 * var(--card-padding)); */
-    color : var(--card-text-color);
-
-}
-
-.p-data-card {
-    display: flex;
-    flex-direction: column;
-    text-overflow: hidden;
-    text-decoration: none;
-    background: var(--card-background-color);
-    padding: var(--card-padding);
-    margin-bottom: var(--vspace-1);
-    border-radius : var(--card-radius);
-    box-shadow: 0 1.5em 2.5em -.5em rgba(#000000, .1);
-    transition: transform .45s ease, background .45s ease;
     position: relative;
 }
 
-/* .p-data-card:hover {
-    transform: scale(1.02);
+@media screen and (max-width: 900px) {
+    .p-column {
+        margin-left : 15px;
+        margin-right: 15px;
+    }
+}
+
+.p-card {
+    background-color: var(--card-bg-color);
+    padding: var(--card-padding);
+    border-radius : var(--card-radius);
+    color : var(--card-text-color);
+    transition: transform .30s ease;
+    line-height: 1.1em;
+}
+
+.p-card:hover {
+    transform : scale(1.02);
+    background-color: var(--card-hover-bg-color);
+}
+
+.p-card > h5 {
+    font-size : calc(var(--text-size) * var(--text-multiplier));
+    color : var(--card-text-color);
+    font-weight: bold;
+    margin-bottom : 0;
+}
+
+.p-card > p {
+    margin-top : .5em;
+    margin-bottom: 0;
+    color : var(--card-text-color);
+    font-size : calc(var(--text-size) * 0.9 * var(--text-multiplier));
+}
+
+/* collapsible things */
+
+.p-collapsible:focus {
+    background : transparent;
+}
+
+/* use this code if you want the text to stay blue while opened, it just adds the .active class to the code below
+.active .collapsible:hover {
+    background-color: transparent;
+    color: #537bff;
 } */
 
-.p-data-card > h4 {
-    margin-top : 0;
-}
+/* .p-collapsible:hover {
+    background-color: transparent;
+    color: #537bff;
 
-.p-data-card > h5 {
-    margin-top : 0;
-    font-size : var(--text-sm);
-}
+} */
 
-.p-data-card > img {
-    border-radius: 20px;
-    max-width: 100%;
-    height: auto;
-}
-
-.p-data-subcard {
-    display : flex;
-    flex-direction: column;
+.p-collapsible-content {
+    display: inline-block;
     overflow: hidden;
-    text-decoration: none;
-    background: transparent;
-    margin-right : calc(-1 * var(--card-padding));
-    margin-left : calc(-1 * var(--card-padding));
-    padding-left : var(--card-padding);
-    /* padding: 30px;
-    margin-bottom: var(--vspace-1);
-    border-radius : 20px;
-    box-shadow: 0 1.5em 2.5em -.5em rgba(#000000, .1);  */
+    background : transparent;
+    max-height: 0;
+    transition: max-height 0.3s ease-in-out;
 }
 
-.p-data-subcard:hover {
-    background : rgb(239, 239, 239);
+.p-desc-card {
+    position: relative;
+    background-color: var(--desc-card-bg-color);
+    border-radius : var(--card-radius);
+    color : var(--card-text-color);
+    /* transition: transform .30s ease; */
+    line-height: 1.1em;
+    grid-column: 1/-1;
+}
+
+/* padding: var(--card-padding); */
+
+/* project title */
+.p-desc-card > h5 {
+    font-size : calc(var(--text-size) * var(--text-multiplier));
+    color : var(--card-text-color);
+    font-weight: bold;
+    margin-bottom : 0;
+}
+
+/* project language */
+.p-desc-card > h6 {
+    font-size : calc(var(--text-size) * 0.6 * var(--text-multiplier));
+    color : var(--card-text-color);
+    margin-bottom : 0;
+    text-decoration: italic;
+
+    margin-top : .5em;
+    margin-bottom : .5em;
+    line-height: normal;
+    letter-spacing : .2rem;
+}
+
+/* .p-desc-card > h6::before {
+    content : "\00a0";
+} */
+
+/* project description */
+.p-desc-card > p {
+    margin-top : .5em;
+    margin-bottom: 0;
+    color : var(--card-text-color);
+    font-size : calc(var(--text-size) * 0.9 * var(--text-multiplier));
+}
+
+.p-github-link {
+    display: inline-flex;
+    color: #FFDB5C;
+    font-weight: 500;
+    margin-top : 1em;
+    font-size : calc(var(--text-size) * 0.9 * var(--text-multiplier));
+    font-family: var(--font-2);
+    vertical-align: middle;
+    transition: .1s
+}
+
+.p-github-link:hover {
+    color: var(--hyperlink-hover-color)
+}
+
+.p-github-link svg {
+    position: relative;
+    height : 1em;
+    width  : 1em;
+    top : .08em;
+    margin-right: .2em;
+}
+
+
+.p-github-link svg path {
+    fill       : #FFDB5C;
+    transition : .1s;
+}
+
+.p-github-link:hover svg path,
+.p-github-link:hover svg path {
+    fill : var(--hyperlink-hover-color)
 }
 
 /* ------------------------------------------------------------------- 
@@ -4874,63 +4882,6 @@ a > span {
     font-family : var(--font-2);
     display : flex;
     text-align : center;
-}
-
-
-/* ------------------------------------------------------------------- 
- * ## gradient card border
- * ------------------------------------------------------------------- */
-
-/* General card styles */
-.g-card{
-    border-radius: var(--card-radius); /*Rounds the corners a little.*/
-    position: relative; /*Position of relative because we will use position of absolute on the pseudo-element. This will make it so that the pseudo-element will not float away from the card.*/
-    transition: transform .45s ease, background .45s ease;
-}
-/*Creating the gradient border with a pseudo-element. */
-.g-card::before{
-    content: ''; /*Set the content property to an empty string, if you don't set a content the element won't show.*/
-    position: absolute; /*Allows for this element to be freely moved within the parent box that has relative position.*/
-    top: 0;
-    left: 0;
-    width: calc(100% + 8px); /* We make this element 100% of the card with and height and add 8px so make it slightly larger.*/
-    height: calc(100% + 8px);
-    transform: translate(-4px, -4px); /*Now we use a negative translation to center this element in terms of the card. We use half of the extra 8px we gave it for width and height.*/
-    background: linear-gradient(60deg, #5ff281, #5f86f2, #a65ff2, #f25fd0, #f25f61, #f2cb5f) 0 50%; /*You can use a gradient of your choosing. I generated this one online.*/
-    background-size: 300% 300%; /*Setting the background size to a large number since we will be animating the background position via keyframes.*/
-    animation:  gradient-animation 2.5s alternate infinite; /*Applying the keyframe animation.*/
-    border-radius: var(--card-radius); /*Rounds the corners a little.*/
-    z-index: -1; /*Sends the the gradient background to the back of the card.*/
-}
-
-.g-card:hover {
-    transform: scale(1.02)
-}
-
-.g-card-title{
-    font-size: 45px;
-    margin-block: 25px;
-}
-.g-card-title span{
-    font-size: 16px;
-}
-.g-card-button{
-    display: inline-block;
-    font-size: 14px;
-    color: #fff;
-    text-decoration: none;
-    border: 1px solid #fff;
-    border-radius: 20px;
-    padding: 10px 15px;
-}
-/* 
-    The keyframe animation will have one stop at 50% where we change the background position from the default value to 100% on the X axis and 50% on the Y.
-    We alternate this animation and make it infinite when we apply it to the element we want to animate. 
-*/
-@keyframes gradient-animation {
-    50%{
-        background-position: 100% 50%;
-    }
 }
 
 /* ===================================================================
