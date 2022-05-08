@@ -4715,14 +4715,15 @@ a > span {
 }
 
 .p-column {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+    display: block;
+
+    /* display: grid;
+    grid-template-columns: repeat(2, 435px);
+    grid-template-rows: auto; */
 
     /* when you change this, update the media query below that prevents the auto margins from completely disappearing */
     max-width: 900px;
     margin: auto;
-    grid-auto-rows: minmax(100px, auto);
 
     position: relative;
 }
@@ -4741,6 +4742,10 @@ a > span {
     color : var(--card-text-color);
     transition: transform .30s ease;
     line-height: 1.1em;
+    display: inline-block;
+    margin: 10px;
+
+    width: 100%;
 }
 
 .p-card:hover {
@@ -4781,7 +4786,6 @@ a > span {
 } */
 
 .p-collapsible-content {
-    display: inline-block;
     overflow: hidden;
     background : transparent;
     max-height: 0;
@@ -4795,7 +4799,10 @@ a > span {
     color : var(--card-text-color);
     /* transition: transform .30s ease; */
     line-height: 1.1em;
-    grid-column: 1/-1;
+    /* grid-column: 1/-1; */
+    width: 100%;
+
+    margin: 0px 10px 0px 10px;
 }
 
 /* padding: var(--card-padding); */
@@ -4907,7 +4914,8 @@ a > span {
 
 .contact-header-h2 {
     font-family: var(--font-1);
-    font-size: calc(var(--text-multiplier) * var(--text-desc-size))
+    font-size: calc(var(--text-multiplier) * var(--text-desc-size));
+    color: var(--color-white);
 }
 
 .s-contact h5 {
