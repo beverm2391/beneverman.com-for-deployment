@@ -74,11 +74,21 @@
 /* ------------------------------------------------------------------- 
  * ## fonts 
  * ------------------------------------------------------------------- */
+
+/* Lora and Inter */
 @import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
 
+/* new fonts */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans");
+
 :root {
+
+    /* original fonts */
     --font-1 : "Lora", serif;
     --font-2 : "Inter", sans-serif;
+
+    /* trying new fonts */
+    --font-3 : "Noto Sans", sans-serif;
 
     /* monospace
     */
@@ -180,20 +190,14 @@
     --color-body                   : white;
     --color-border                 : rgb(0, 0, .08);
     --border-radius                : 3px;
+
+    /* ! My Colors */
+
+    --hyperlink-color-1 : rgb(23, 93, 255);
+    --hyperlink-color-1-hover : rgb(255, 219, 38);
+    --hyperlink-color-2 : rgb(255, 219, 38);
+    --hyperlink-color-2-hover : rgb(23, 93, 255);
 }
-
-/* ------------------------------------------------------------------- 
- * ## Ben's Color Pallete
- * ------------------------------------------------------------------- */
-
-:root {
-    --pallete-color-1 : #e0e1dd;
-    --pallete-color-2 : #778da9;
-    --pallete-color-3 : #515a77;
-    --pallete-color-4 : #1b263b;
-    --pallete-color-5 : #0d1b2a;
-}
-
 
 /* ------------------------------------------------------------------- 
  * ## spacing and typescale
@@ -1374,7 +1378,7 @@ h1,
     margin-bottom : var(--vspace-2);
 }
 
-h2,
+/* h2,
 .h2,
 h3,
 .h3,
@@ -1390,7 +1394,7 @@ h6,
 .h6 {
     margin-top    : var(--vspace-1_5);
     margin-bottom : var(--vspace-0_5);
-}
+} */
 
 h1,
 .h1 {
@@ -2203,9 +2207,10 @@ button.btn--stroke {
 button.btn--stroke:focus,
 .btn--stroke:hover,
 button.btn--stroke:hover {
-    background : var(--color-btn-stroke-hover) !important;
-    border     : 2px solid var(--color-btn-stroke-hover);
-    color      : var(--color-btn-stroke-hover-text);
+    background-color : rgba(0, 102, 255, 0.1) !important;
+    border     : 2px solid var(--hyperlink-color-1);
+    transform: scale(1.03);
+    transition : 0.3s ease-in-out;
 }
 
 .btn--pill,
@@ -2781,7 +2786,7 @@ img.u-pull-left {
 /* ------------------------------------------------------------------- 
  * ## section header
  * ------------------------------------------------------------------- */
-.section-header {
+/* .section-header {
     max-width     : 840px;
     margin-bottom : var(--vspace-1_5);
     text-align    : center;
@@ -2809,9 +2814,9 @@ img.u-pull-left {
     left             : 50%;
 }
 
-/* .section-header--dark .text-pretitle {
+.section-header--dark .text-pretitle {
     color : var(--color-gray-15);
-} */
+}
 
 .section-header--dark .lead {
     color : rgba(255, 255, 255, 0.35);
@@ -2819,7 +2824,7 @@ img.u-pull-left {
 
 .section-header--dark.has-bottom-sep::before {
     background-color : rgba(255, 255, 255, 0.05);
-}
+} */
 
 /* ------------------------------------------------------------------- 
  * ## theme-specific typography classes
@@ -3177,6 +3182,117 @@ img.u-pull-left {
     color: var(--color-1-light);
 }
 
+/* ===================================================================
+ * # HOMEPAGE - Global Classes
+ *
+ *
+ * ------------------------------------------------------------------- */
+
+.section-header {
+    padding-top: var(--vspace-2);
+    margin-bottom: var(--vspace-2);
+
+    text-align       : center;
+    vertical-align : middle;
+
+    position      : relative;
+
+    text-align: center;
+}
+
+.section-title {
+    --section-title-size: 10.4rem;
+    --section-title-multiplier: 1;
+
+    font-family : var(--font-2);
+    font-weight: bold;
+    font-size: calc(var(--section-title-size) * var(--section-title-multiplier));
+    letter-spacing : .1rem;
+
+    line-height: 1.12;
+
+    color: black;
+    
+    margin-top: 0;
+}
+
+h1.section-title {
+    margin-bottom: var(--vspace-2);
+}
+
+/* hero title/intro title */
+.intro-new-formatting > .section-title {
+    color: white;
+    margin-bottom : 0;
+    font-size: calc(var(--section-title-size) * 1.2 * var(--section-title-multiplier));
+}
+
+/* section title responsive */
+
+@media screen and (max-width: 900px) {
+    .intro-new-formatting > .section-title {
+        --section-title-multiplier: .8
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .section-title {
+        --section-title-multiplier: .9;
+    }
+    .intro-new-formatting > .section-title {
+        --section-title-multiplier: .65
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .section-title {
+        --section-title-multiplier: .8;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .section-title {
+        --section-title-multiplier: .7;
+    }
+    .section-header {
+        margin-top: var(--vspace-1);
+        margin-bottom: var(--vspace-1);
+    }
+    .intro-new-formatting > .section-title {
+        --section-title-multiplier: .5
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .section-title {
+        --section-title-multiplier: .6;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .intro-new-formatting > .section-title {
+        --section-title-multiplier: .4;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .section-title {
+        --section-title-multiplier: .5;
+    }
+    .section-header {
+        margin-top: var(--vspace-0_5);
+        margin-bottom: var(--vspace-0_5);
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .section-title {
+        --section-title-multiplier: .4;
+    }
+    .intro-new-formatting > .section-title {
+        --section-title-multiplier: .3;
+    }
+}
 
 /* ===================================================================
  * # HOMEPAGE - INTRO
@@ -3204,7 +3320,7 @@ img.u-pull-left {
     bottom              : 0;
     width               : 100%;
     height              : 100%;
-    background-image    : url(https://images.unsplash.com/photo-1635103723394-10dab9619874?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80);
+    background-image    : url(../images/i-intro/conor-1.jpg);
     background-repeat   : no-repeat;
     background-position : center 30%;
     background-size     : cover;
@@ -3220,7 +3336,7 @@ img.u-pull-left {
     bottom         : 0;
     width          : 100%;
     height         : 100%;
-    background     : var(--color-gray-15);
+    background     : black;
     pointer-events : none;
     opacity        : 0;
 }
@@ -3290,7 +3406,7 @@ img.u-pull-left {
     margin-bottom: 0;
 }
 
-.s-intro__title {
+/* .s-intro__title {
     --text-title-size : 10.4rem;
     --text-multiplier : 1;
     font-weight       : 700;
@@ -3299,7 +3415,7 @@ img.u-pull-left {
     color             : rgb(255, 255, 255);
     margin-top        : 0;
     margin-bottom     : var(--vspace-2_2);
-}
+} */
 
 .s-intro__more {
     --vspace-btn : var(--vspace-1_5);
@@ -3429,7 +3545,7 @@ img.u-pull-left {
 }
 
 /* --------------------------------------------------------------------
-* ## intro fluid text
+* ## Canvas
 * -------------------------------------------------------------------- */
 
 canvas {
@@ -3438,7 +3554,15 @@ canvas {
 	height: 100vh;
 	top: 0;
 	left: 0;
+    z-index: -1;
 }
+
+/* canvas {
+    display: block;
+    width: 100vw;
+    height: 100%;
+    z-index: -1;
+} */
 
 /* ------------------------------------------------------------------- 
  * responsive:
@@ -3562,19 +3686,20 @@ canvas {
 
     /* background: linear-gradient(180deg, rgba( 2, 0, 36, 0.15) 0%, rgba(255,255,255,0) 24%); */
 
-    background-color : rgb(244, 240, 235);
-    background-image:
+    /* background-color : rgb(246, 246, 246); */
+
+    /* background-image:
         radial-gradient(at 90% 16%, rgba(0, 0, 0, 0.06) 0px, transparent 50%),
         radial-gradient(at 38% 19%, hsla(0,0%,100%,1) 0px, transparent 50%),
         radial-gradient(at 76% 72%, hsla(4,100%,98%,1) 0px, transparent 50%),
-        radial-gradient(at 30% 74%, rgba(0, 0, 0, 0.06) 0px, transparent 50%);
+        radial-gradient(at 30% 74%, rgba(0, 0, 0, 0.06) 0px, transparent 50%); */
     
-    /* background-image: url(../images/i-about/annie-1.jpg); */
+    background-image: url(../images/i-about/ibrahim-1.jpg);
 
     background-repeat   : no-repeat;
     background-position : center;
     background-size     : cover;
-    z-index             : 0;
+    z-index             : -1;
 }
 
 .i-about-bg::before {
@@ -3589,7 +3714,7 @@ canvas {
     height         : 100%;
     background     : rgb(255, 255, 255);
     pointer-events : none;
-    opacity        : 0;
+    opacity        : .7;
 }
 
 .i-about .text-pretitle::before {
@@ -3625,6 +3750,7 @@ canvas {
 }
 
 .i-about-me-intro {
+    padding-top: var(--vspace-2);
     padding-bottom: var(--vspace-2);
 }
 
@@ -3681,6 +3807,7 @@ canvas {
     margin-left: auto;
     margin-right: auto;
 }
+
 
 
 /* --------------------------------------------------------------------
@@ -3786,9 +3913,9 @@ canvas {
  *
  * ------------------------------------------------------------------- */
 .experiences {
-    background-color : #F2C8A2;
-    padding-top      : var(--vspace-4);
-    padding-bottom   : var(--vspace-5);
+    background-color : #ffffff;
+    padding-top      : var(--vspace-2);
+    padding-bottom   : var(--vspace-2);
     color            : #000000;
     font-weight      : 500;
     position         : relative;
@@ -3817,11 +3944,13 @@ canvas {
     bottom              : 0;
     width               : 100%;
     height              : 100%;
-    background-image    : url(../images/i-experiences/services-bg.jpg);
+    background-image    : url(../images/i-experiences/pawel-1.jpg);
     background-repeat   : no-repeat;
     background-position : center;
     background-size     : cover;
     z-index             : 0;
+    
+    filter : brightness(1.3)
 }
 
 .experiences__bg::before {
@@ -3847,6 +3976,10 @@ canvas {
     letter-spacing: var(--btn-letter-spacing); 
 }
 
+.btn-responsive:hover {
+    background: rgb(0, 0, 0, 0.2) 
+}
+
 hr {
     border-top: 100px solid rgb(255, 255, 255);
     margin: 0;
@@ -3866,7 +3999,7 @@ hr {
 } */
 
 .e-margin-top {
-    margin-top : var(--vspace-0_5);
+    margin-top : var(--vspace-1_5);
 }
 
 .left {
@@ -3899,7 +4032,7 @@ hr {
 }
 
 .e-table > .td {
-   justify-content: bottom;
+    justify-content: bottom;
 }
 
 .e-ul, .e-ul-static {
@@ -4062,9 +4195,9 @@ hr {
         --text-multiplier : 1;
     }
 
-    .experiences__content {
+    /* .experiences__content {
         max-width : 900px;
-    }
+    } */
 }
 
 @media screen and (max-width: 1000px) {
@@ -4111,577 +4244,24 @@ hr {
         padding-right: 0;
     }
 }
-
-/* ------------------------------------------------------------------- 
- * ## HOMEPAGE - PROJECTS
- * ------------------------------------------------------------------- */
-
-.p-container-homepage {
-    background : transparent;
-    padding-bottom : var(--vspace-2);
-
-    /* use this var to control padding inside cards */
-    --card-padding : 30px;
-    /* use this var to control border radiuw of cards */
-    --card-radius: 10px;
-    --card-background-color: rgba(50, 50, 50, 0.98);
-    --card-text-color: white;
-
-    z-index: 0;
-    font-size: var(--base-font-size);
-
-    padding-top : var(--vspace-4);
-
-    --text-desc-size-rem : 1.9rem;
-    --text-multiplier : 1;
-}
-
-.p-text-pretitle {
-    font-family    : var(--font-2);
-    font-size      : var(--text-size);
-    font-weight    : 600;
-    color          : var(--color-black);
-    text-transform : uppercase;
-    letter-spacing : .2em;
-    margin-top     : 0;
-    margin-bottom  : 0;
-    position       : relative;
-
-    /* this is for the dark mode animation in the projects section so the title can adjust color */
-    -webkit-transition: all 0.6s;
-    transition: all 0.6s;
-}
-
-.p-heading {
-    margin-bottom: var(--vspace-1);
-}
-
-/* gradient knockout text */
-.fp-content-block {
-    border-radius: var(--card-radius);
-    padding : var(--card-padding);
-    display : inherit;
-    margin-bottom : var(--vspace-2);
-    overflow: hidden;
-
-    background: rgba(255, 255, 255, 0.16);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.fp-content-block > h2, h3, h4, h5 {
-    margin-top: 0;
-}
-
-.fp-content-block > h2 {
-    text-align : center;
-    margin-bottom : var(--vspace-2);
-}
-
-.fp-pretitle {
-    text-align: center;
-    color : var(--bg-2);
-    position : relative;
-
-    --text-title-size : 10.4rem;
-    font-weight       : 700;
-    font-size         : calc(var(--text-title-size) * var(--text-multiplier));
-    line-height       : 1.1154;
-    margin : 0;
-}
-
-.fp-title {
-    text-align: center;
-    color : var(--bg-2);
-    position : relative;
-
-    --text-title-size : 10.4rem;
-    font-weight       : 700;
-    font-size         : calc(var(--text-title-size) * .75 * var(--text-multiplier));
-    line-height       : 1.1154;
-    margin : 0;
-    margin-bottom: var(--vspace-2);
-}
-
-.text-clip-gradient {
-    background: linear-gradient(60deg, #5ff281, #5f86f2, #a65ff2, #f25fd0, #f25f61, #f2cb5f) 0 50%; /*You can use a gradient of your choosing. I generated this one online.*/
-    background-size: 300% 300%; /*Setting the background size to a large number since we will be animating the background position via keyframes.*/
-    animation:  gradient-animation 2.5s alternate infinite; /*Applying the keyframe animation.*/
-
-    color: transparent;
-    background-clip : text;
-    -webkit-background-clip: text;
-}
-
-@keyframes gradient-animation-2 {
-    50%{
-        background-position: 100% 50%;
-    }
-}
-
-/* .featured-projects-title {
-} */
-
-/*Creating the gradient border with a pseudo-element. */
-.g-text::before{
-    content: ''; /*Set the content property to an empty string, if you don't set a content the element won't show.*/
-    position: absolute; /*Allows for this element to be freely moved within the parent box that has relative position.*/
-    top: 0;
-    left: 0;
-    width: calc(100% + 8px); /* We make this element 100% of the card with and height and add 8px so make it slightly larger.*/
-    height: calc(100% + 8px);
-    transform: translate(-4px, -4px); /*Now we use a negative translation to center this element in terms of the card. We use half of the extra 8px we gave it for width and height.*/
-    background: linear-gradient(60deg, #5ff281, #5f86f2, #a65ff2, #f25fd0, #f25f61, #f2cb5f) 0 50%; /*You can use a gradient of your choosing. I generated this one online.*/
-    background-size: 300% 300%; /*Setting the background size to a large number since we will be animating the background position via keyframes.*/
-    animation:  gradient-animation 2.5s alternate infinite; /*Applying the keyframe animation.*/
-    border-radius: var(--card-radius); /*Rounds the corners a little.*/
-    z-index: -1; /*Sends the the gradient background to the back of the card.*/
-}
-
-/* Projects Images */
-
-.featured-project-image {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%;
-    margin-bottom: var(--vspace-2);
-}
-
-.fp-data-card {
-    display: flex;
-    flex-direction: column;
-    text-overflow: hidden;
-    text-decoration: none;
-    background: transparent;
-    margin-bottom: var(--vspace-1);
-    border-radius : var(--card-radius);
-    box-shadow: 0 1.5em 2.5em -.5em rgba(#000000, .1);
-    transition: transform .45s ease, background .45s ease;
-    position: relative;
-
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.fp-data-card:hover {
-    transform: scale(1.02);
-}
-
-.fp-data-card > h4 {
-    margin-top : 0;
-}
-
-.fp-data-card > h5 {
-    margin-top : 0;
-    font-size : var(--text-sm);
-}
-
-.fp-data-card > img {
-    border-radius: 20px;
-    max-width: 100%;
-    height: auto;
-}
-
-.fp-data-card > p {
-    margin-bottom: 0;
-    font-family: var(--font-1);
-
-    /* padding-bottom : calc(.5 * var(--card-padding)); */
-    color : rgb(0, 0, 0);
-
-    /* font-size   : calc(var(--text-desc-size-rem) * var(--text-multiplier)); */
-    font-size: inherit;
-    line-height: 2em;
-}
-
-.fp-data-card:hover > p {
-    color:rgba(44, 89, 255, 0.742);
-}
-
-
-.fp-data-card > .click-prompt {
-    z-index          : 2;
-    position         : absolute;
-    right         : 0;
-    bottom            : 0;
-    padding-right : calc(.4 * var(--card-padding));
-    font-size : calc(.7 * var(--base-font-size));
-    color : black;
-    font-family : var(--font-2);
-    display : flex;
-    text-align : center;
-}
-
-.link-to-projects-page {
-    text-align: center;
-}
-
-.link-to-projects-page > .btn {
-    /* border-radius: 10px; */
-    --btn-font-size : .7em;
-    --letter-spacing: .35em;
-
-    font-size               : var(--btn-font-size);
-    text-transform          : uppercase;
-    letter-spacing          : var(--letter-spacing);
-}
-
-/* --------------------------------------------------------------------
- * ## HOMEPAGE - projects responsive
- * -------------------------------------------------------------------- */
-
-@media screen and (max-width: 1400px) {
-    .p-container-homepage {
-        --text-multiplier : 0.9;
-    }
-
-    .p-content {
-        max-width : 900px;
-    }
-}
-
-@media screen and (max-width: 1000px) {
-    .p-container-homepage {
-        --text-multiplier : 0.8;
-    }
-
-    .p-content {
-        max-width : 800px;
-    }
-}
-
-@media screen and (max-width: 800px) {
-    .p-container-homepage {
-        --text-multiplier : 0.7;
-    }
-}
-
-@media screen and (max-width: 700px) {
-    .p-container-homepage {
-        --text-multiplier : 0.65;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .p-container-homepage {
-        --text-multiplier : 0.6;
-    }
-    .link-to-projects-page > .btn {
-        margin: auto;
-        --btn-font-size: .7em;
-        --letter-spacing: .15em;
-    }
-}
-
-@media screen and (max-width: 450px) {
-    .p-container-homepage {
-        --text-multiplier : 0.55;
-    }
-}
-
-@media screen and (max-width: 400px) {
-    .p-container-homepage {
-        --text-multiplier : 0.5;
-    }
-}
-
-@media screen and (max-width: 350px) {
-    .p-container-homepage {
-        --text-multiplier : 0.45;
-    }
-    .link-to-projects-page > .btn {
-        padding: 0 1.5rem;
-    }
-}
-
-/* ------------------------------------------------------------------- 
- * ## about-me page
- * ------------------------------------------------------------------- */
-
-.about-me-container{
-    /* background-image : url(../images/about-me/about-me-bg.jpg); */
-    background-size : contain;
-
-    background-color: #fffbf2;
-    padding-bottom : var(--vspace-4)
-}
-
-.about-me-intro{
-    padding-bottom: var(--vspace-2);
-}
-
-.about-me-image {
-    border: 3px solid;
-    background-size: cover;
-}
-
-.about-me-content{
-    /* background-image : url(../images/muted-blues/grey-bg-3.jpg); */
-    /* background-size: cover; */
-    padding-bottom: var(--vspace-3);
-    width : 80%;
-    margin : auto;
-    color : black;
-    font-family : var(--font-2);
-
-    background : #ffffff;
-
-    border : 3px solid;
-}
-
-.about-me-link {
-    color : #0d1872;
-    text-decoration : none;
-    padding-bottom: 2px;
-    /* border-bottom: 1px solid rgb(0, 0, 153); */
-}
-
-.about-me-link:hover{
-    color : #b37605;
-}
-
-.about-me-heading{
-    text-align       : center;
-    vertical-align : middle;
-    margin-top : var(--vspace-2);
-    margin-bottom : var(--vspace-1);
-    color : black;
-    font-family : var(--font-1)
-}
-
-.about-me-heading-2 {
-    margin-top: var(--vspace-2);
-    margin-bottom: var(--vspace-2);
-}
-
-.about-me-heading-text-2 {
-    --text-title-size : 10.4rem;
-    --text-multiplier : 1;
-    font-weight       : 700;
-    font-size         : calc(var(--text-title-size) * var(--text-multiplier));
-    line-height       : 1.1154;
-    color             : rgb(255, 255, 255);
-    margin-top        : 0;
-    margin-bottom     : var(--vspace-2_2);
-    color: rgb(0, 0, 0);
-}
-
-
-/* use text align to alignt buttons, since they are treated as inline elements */
-.about-me-panel{
-    letter-spacing : 0;
-    text-align : center;
-    background-size: contain;
-    margin : auto;
-}
-
-.about-me-ul {
-    margin-left : var(--vspace-2)
-}
-
-.about-me-content > hr {
-    border-top : 3px solid var(--color-border);
-    margin       : 0;
-    height       : 0;
-    padding      : 0;
-}
-
-/* ------------------------------------------------------------------- 
- * ## blog
- * ------------------------------------------------------------------- */
-
-.b-container {
-    background-image : url(../images/blog/gradient-1.jpg);
-    background-size : cover;
-    padding-bottom : var(--vspace-2);
-
-/* use this var to control padding inside cards */
-    --card-padding : 30px;
-/* use this var to control border radius of cards */
-    --card-radius: 10px;
-    --card-background-color: rgba(255, 255, 255, .98);
-    --border-width : 2px;
-    --border-color : rgba(0, 0, 0, .3)
-}
-
-.leftcolumn {
-    float: left;
-    width: 25%;
-}
-
-.rightcolumn {
-    float: right;
-    width: 75%;
-    padding-left: var(--vspace-1);
-}
-
-.rightcolumn > h2 {
-    margin-top : var(--vspace-1);
-    margin-bottom : var(--vspace-1);
-}
-
-.card {
-    background-color: var(--card-background-color);
-    padding: var(--card-padding);
-    margin-bottom: var(--vspace-1_25);
-    border-radius : var(--card-radius);
-}
-
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-.blog-intro {
-    padding-bottom: var(--vspace-2);
-}
-
-.blog-heading {
-    padding-bottom : 0;
-    color : white;
-}
-
-.card > h4 {
-    margin-top : 0;
-}
-
-/* card border */
-.card, .data-card, .data-card-2 {
-    border: var(--border-width) solid var(--border-color);
-}
-
-.data-card {
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    text-decoration: none;
-    background: var(--card-background-color);
-    padding: var(--card-padding);
-    margin-bottom: var(--vspace-1);
-    border-radius : var(--card-radius);
-    box-shadow: 0 1.5em 2.5em -.5em rgba(#000000, .1);
-    transition: transform .45s ease, background .45s ease;
-}
-
-.data-card:hover {
-    background : rgb(222, 243, 255);
-    transform: scale(1.02);
-}
-
-.data-card > h4 {
-    margin-top : 0;
-}
-
-.data-card > h5 {
-    margin-top : 0;
-    font-size : var(--text-sm);
-}
-
-.data-card > img {
-    border-radius: 20px;
-    max-width: 100%;
-    height: auto;
-}
-
-.data-card-2 {
-    display: flex;
-    overflow: hidden;
-    background: var(--card-background-color);
-    padding: var(--card-padding);
-    margin-bottom: var(--vspace-1);
-    border-radius : var(--card-radius);
-    box-shadow: 0 1.5em 2.5em -.5em rgba(#000000, .1);
-    transition: transform .45s ease, background .45s ease;
-    text-overflow: ellipsis;
-}
-
-.data-card-2 > img {
-    border-radius: 20px;
-    max-width: 100%;
-    height: auto;
-    margin : auto;
-    margin-right: var(--card-padding);
-    justify-content: center;
-    max-height : 300px;
-    border-radius: var(--card-border-radius);
-    object-fit: cover;
-}
-
-.data-card-2 > .card-content {
-    overflow: hidden;
-    max-height: 300px;
-}
-
-.data-card-2:hover {
-    background : rgb(222, 243, 255);
-    transform: scale(1.02);
-}
-
-.data-card-2 > .card-content > h4 {
-    margin-top : 0;
-}
-
-.data-card-2 .card-content > h5 {
-    margin-top : 0;
-    font-size : var(--text-sm);
-}
-
-.data-card-2 .card-content > p {
-    padding-top : var(--card-padding);
-    overflow: hidden;
-}
-
-
-a > span {
-    color : black;
-}
-
-.data-subcard {
-    display : flex;
-    flex-direction: column;
-    overflow: hidden;
-    text-decoration: none;
-    background: transparent;
-    margin-right : calc(-1 * var(--card-padding));
-    margin-left : calc(-1 * var(--card-padding));
-    padding-left : var(--card-padding);
-    /* padding: 30px;
-    margin-bottom: var(--vspace-1);
-    border-radius : 20px;
-    box-shadow: 0 1.5em 2.5em -.5em rgba(#000000, .1);  */
-}
-
-.data-subcard:hover {
-    background : rgb(239, 239, 239);
-}
-
-.data-card > .column > img {
-    display: flex;
-    height : 200px;
-    width : auto;
-}
-
 /* ------------------------------------------------------------------- 
  * ## Projects
  * ------------------------------------------------------------------- */
 
 .p-container {
-    /* background-image : url(../images/projects/projects-bg.jpg); */
-    background-size : cover;
+
+    background-size : 150%, auto;
     padding-bottom : var(--vspace-2);
-    background-color: white;
+    background-image : url(../images/i-projects/shapelined-1.jpg);
+
+    padding-top : var(--vspace-2);
 
     --card-padding : 20px;
     --card-radius: 17px;
 
     --card-bg-color: #6F2929;
     --desc-card-bg-color: #26355C;
-    --card-text-color: white;
+    --card-text-color: rgb(255, 255, 255);
     --card-hover-bg-color : #d93e3e;
 
     --text-multiplier : 1;
@@ -4698,13 +4278,17 @@ a > span {
 }
 
 .p-heading-text {
-    --text-title-size : 5.4rem;
+    --text-title-size : 9.4rem;
     font-weight       : 700;
     font-size         : calc(var(--text-title-size) * var(--text-multiplier));
     line-height       : 1.1154;
     color             : rgb(0, 0, 0);
     margin-top        : 0;
     margin-bottom     : var(--vspace-2_2);
+}
+
+.p-title {
+    color : rgb(0, 0, 0);
 }
 
 .p-content {
@@ -4726,45 +4310,78 @@ a > span {
     margin: auto;
 
     position: relative;
+    justify-content: center;
+    align-items: center;
 }
 
 @media screen and (max-width: 900px) {
-    .p-column {
-        margin-left : 15px;
-        margin-right: 15px;
+    .projects-content {
+        margin-left : 30px;
+        margin-right: 30px;
     }
 }
 
 .p-card {
-    background-color: var(--card-bg-color);
+    /* background-color: var(--card-bg-color); */
     padding: var(--card-padding);
     border-radius : var(--card-radius);
     color : var(--card-text-color);
     transition: transform .30s ease;
     line-height: 1.1em;
     display: inline-block;
-    margin: 10px;
+    margin: 10px auto;
 
     width: 100%;
+
+    background: rgb(0, 0, 0, .8);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(0, 0, 0, 0.3);
 }
+
+/* 
+.color-python {
+    background-color: #8f2b22;
+}
+
+.color-webdev {
+    background-color: rgb(46, 59, 175);
+}
+
+.color-excel {
+    background-color: rgb(0, 112, 0)
+}
+
+.p-card.color-python:hover {
+    background-color: #de2a19;
+}
+
+.p-card.color-webdev:hover {
+    background-color: rgb(18, 39, 231);
+}
+
+.p-card.color-excel:hover {
+    background-color: rgb(41, 177, 41)
+} */
 
 .p-card:hover {
     transform : scale(1.02);
-    background-color: var(--card-hover-bg-color);
 }
 
 .p-card > h5 {
-    font-size : calc(var(--text-size) * var(--text-multiplier));
+    font-size : calc(var(--text-size));
     color : var(--card-text-color);
     font-weight: bold;
     margin-bottom : 0;
+    margin-top: 0;
 }
 
 .p-card > p {
     margin-top : .5em;
     margin-bottom: 0;
     color : var(--card-text-color);
-    font-size : calc(var(--text-size) * 0.9 * var(--text-multiplier));
+    font-size : calc(var(--text-size) * 0.9);
 }
 
 /* collapsible things */
@@ -4794,7 +4411,7 @@ a > span {
 
 .p-desc-card {
     position: relative;
-    background-color: var(--desc-card-bg-color);
+    background-color: rgb(94, 94, 94);
     border-radius : var(--card-radius);
     color : var(--card-text-color);
     /* transition: transform .30s ease; */
@@ -4802,22 +4419,23 @@ a > span {
     /* grid-column: 1/-1; */
     width: 100%;
 
-    margin: 0px 10px 0px 10px;
+    margin: 0;
 }
 
 /* padding: var(--card-padding); */
 
 /* project title */
 .p-desc-card > h5 {
-    font-size : calc(var(--text-size) * var(--text-multiplier));
+    font-size : calc(var(--text-size));
     color : var(--card-text-color);
     font-weight: bold;
     margin-bottom : 0;
+    margin-top: 0;
 }
 
 /* project language */
 .p-desc-card > h6 {
-    font-size : calc(var(--text-size) * 0.6 * var(--text-multiplier));
+    font-size : calc(var(--text-size) * 0.6);
     color : var(--card-text-color);
     margin-bottom : 0;
     text-decoration: italic;
@@ -4837,7 +4455,7 @@ a > span {
     margin-top : .5em;
     margin-bottom: 0;
     color : var(--card-text-color);
-    font-size : calc(var(--text-size) * 0.9 * var(--text-multiplier));
+    font-size : calc(var(--text-size) * 0.9);
 }
 
 .p-github-link {
@@ -4856,8 +4474,8 @@ a > span {
 }
 
 .p-github-link svg {
-    position: relative;
-    height : 1em;
+    /* position: relative;
+    height : 1em; */
     width  : 1em;
     top : .08em;
     margin-right: .2em;
@@ -4891,6 +4509,47 @@ a > span {
     text-align : center;
 }
 
+/* ------------------------------------------------------------------- 
+ * responsive:
+ * Projects
+ * ------------------------------------------------------------------- */
+ @media screen and (max-width: 1400px) {
+    .p-container {
+        --text-multiplier : 0.9;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .p-container {
+        --text-multiplier : 0.8;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .p-container {
+        --text-multiplier : 0.7;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .p-container {
+        --text-multiplier : 0.65;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .p-container {
+        --text-multiplier : 0.6;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .p-container {
+        --text-multiplier : 0.55;
+    }
+}
+
+
 /* ===================================================================
  * # CONTACT
  *
@@ -4899,29 +4558,33 @@ a > span {
 .s-contact {
     --color-border      : rgba(255, 255, 255, .05);
 
-    background-color    : var(--color-gray-19);
+    background-color    : #ffffff;
     /* background-image    : url(../images/contact-bg.jpg); */
     background-repeat   : no-repeat;
     background-position : center;
     background-size     : cover;
-    padding-top         : var(--vspace-5);
-    padding-bottom      : var(--vspace-3);
+    padding-top         : var(--vspace-2);
+    padding-bottom      : var(--vspace-2);
     position            : relative;
 
     --text-desc-size  : 3.8rem;
     --text-multiplier : 1;
+
+    --contact-text-color : rgb(0, 0, 0);
 }
 
 .contact-header-h2 {
     font-family: var(--font-1);
     font-size: calc(var(--text-multiplier) * var(--text-desc-size));
-    color: var(--color-white);
+    color: var(--contact-text-color);
+    margin-top: var(--vspace-1_5);
+    margin-bottom: var(--vspace-1);
 }
 
 .s-contact h5 {
     margin-top    : 0;
     margin-bottom : var(--vspace-1);
-    color         : rgba(255, 255, 255, 0.25);
+    color         : var(--contact-text-color);
 }
 
 .s-contact h5.with-top-line {
@@ -4944,12 +4607,14 @@ a > span {
     opacity        : 0;
 }
 
-.s-contact .section-header {
-    max-width : 1020px;
-}
 
 .contact-email {
-    font-size: calc(var(--text-multiplier) * var(--text-desc-size))
+    font-size: calc(var(--text-multiplier) * var(--text-desc-size));
+    color: var(--hyperlink-color-1);
+}
+
+.contact-email:hover {
+    color: var(--hyperlink-color-1-hover);
 }
 
 /* icons */
@@ -4962,12 +4627,17 @@ a > span {
 }
 
 .s-contact-icons svg path {
-    fill : white;
+    fill : var(--contact-text-color);
 }
 
 .s-contact-icons svg:hover path {
-    fill       : rgba(255, 255, 255, 0.15);
+    fill       : var(--contact-text-color);
+    opacity : 0.5;
     transition : all 0.15s ease-in-out;
+}
+
+.s-contact-pretitle {
+    color: var(--contact-text-color);
 }
 
 /* ------------------------------------------------------------------- 

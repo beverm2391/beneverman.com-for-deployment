@@ -45,7 +45,7 @@
     }, '-=200')
     .add({
         targets: ['.s-intro__title', '.s-intro__pretitle', '.s-intro__more', '.s-intro-icons'],
-        translateY: [100, 0],
+        translateY: [100, 0],   
         opacity: [0, 1],
         delay: anime.stagger(200)
     }, '-=400')
@@ -577,6 +577,36 @@ for (i = 0; i < acc.length; i++) {
       panel.style.maxHeight = null;
     } else {
       panel.style.maxHeight = panel.scrollHeight + "px";
+    }
+  });
+}
+
+// Projects Collapsible
+
+var acc = document.getElementsByClassName("p-collapsible");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+
+    var panel = this.nextElementSibling;
+
+    // panel.style.padding = "15px";
+
+    if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+    } else {
+        // max height = scroll height + buffer to account for padding/margins
+        panel.style.maxHeight = panel.scrollHeight + 50 + "px";  
+    }
+
+    if (panel.style.maxHeight) {
+        panel.style.padding = "15px"
+    }
+    else {
+        // the delay should equal the transition time from the CSS class .collapsible
+        setTimeout(() => panel.style.padding = null, 250);
     }
   });
 }
