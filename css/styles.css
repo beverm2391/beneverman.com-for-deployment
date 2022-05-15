@@ -4461,7 +4461,7 @@ hr {
     color: #FFDB5C;
     font-weight: 500;
     margin-top : 1em;
-    font-size : calc(var(--text-size) * 0.9 * var(--text-multiplier));
+    font-size : calc(var(--text-size) * var(--text-multiplier));
     font-family: var(--font-2);
     vertical-align: middle;
     transition: .1s
