@@ -4257,9 +4257,9 @@ hr {
     --card-padding : 20px;
     --card-radius: 17px;
 
-    --card-bg-color: #6F2929;
+    --card-bg-color: rgb(255, 255, 255, .1);
     --desc-card-bg-color: #26355C;
-    --card-text-color: rgb(255, 255, 255);
+    --card-text-color: rgb(0, 0, 0);
     --card-hover-bg-color : #d93e3e;
 
     --text-multiplier : 1;
@@ -4339,35 +4339,45 @@ hr {
 }
 
 .p-card {
-    /* background-color: var(--card-bg-color); */
+    background-color: var(--card-bg-color);
     padding: var(--card-padding);
     border-radius : var(--card-radius);
     color : var(--card-text-color);
     transition: transform .30s ease;
-    line-height: 1.1em;
+    line-height: 1.5em;
     display: inline-block;
     margin: 10px auto;
 
     width: 100%;
 
-    background: rgb(0, 0, 0, .8);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     /* border: 1px solid rgba(0, 0, 0, 0.3); */
 }
 
-.p-card:hover {
+/* .p-card:hover {
     transform : scale(1.02);
     background: rgba(255, 56, 103, 0.7);
-}
+} */
 
 .p-card > h5 {
-    font-size : calc(var(--text-size));
+    font-size : calc(var(--text-size) * 1.5);
     color : var(--card-text-color);
     font-weight: bold;
-    margin-bottom : 0;
+    margin-bottom : .5em;
     margin-top: 0;
+}
+
+.p-card > h6 {
+    font-size : calc(var(--text-size) * 0.6);
+    color : var(--card-text-color);
+    text-decoration: italic;
+
+    margin-top : .5em;
+    margin-bottom : 2em;
+    line-height: normal;
+    letter-spacing : .2rem;
 }
 
 .p-card > p {
@@ -4375,6 +4385,7 @@ hr {
     margin-bottom: 0;
     color : var(--card-text-color);
     font-size : calc(var(--text-size) * 0.9);
+    opacity: .8;
 }
 
 /* collapsible things */
