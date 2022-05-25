@@ -3694,7 +3694,7 @@ canvas {
         radial-gradient(at 76% 72%, hsla(4,100%,98%,1) 0px, transparent 50%),
         radial-gradient(at 30% 74%, rgba(0, 0, 0, 0.06) 0px, transparent 50%); */
     
-    background-image: url(../images/i-about/ibrahim-1.jpg);
+    background-image: url(../images/i-about/backgrounds/ibrahim-1.jpg);
 
     background-repeat   : no-repeat;
     background-position : center;
@@ -3755,8 +3755,8 @@ canvas {
 }
 
 .i-about-me-image {
-    border: 3px solid;
-    height: 450px;
+    /* border: 3px solid; */
+    height: auto;
     object-fit: cover;
 
     /* float: left;
@@ -3816,7 +3816,7 @@ blockquote > p {
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.3);
 
-    padding: var(--vspace-2);
+    /* padding: var(--vspace-2); */
 }
 
 .i-about-mission > p {
@@ -3826,6 +3826,10 @@ blockquote > p {
 .i-about-text-centered {
     margin-left: auto;
     margin-right: auto;
+}
+
+.i-about-currently > blockquote > p {
+    margin-bottom: 0;
 }
 
 /* --------------------------------------------------------------------
